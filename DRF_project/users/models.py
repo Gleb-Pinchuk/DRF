@@ -4,8 +4,6 @@ from django.db import models
 # users/models.py
 from django.db import models
 from django.contrib.auth.models import AbstractUser, BaseUserManager
-from materials.models import Course, Lesson
-
 
 class CustomUserManager(BaseUserManager):
     """Кастомный менеджер для пользователя с email вместо username"""
@@ -49,21 +47,21 @@ class Payment(models.Model):
     ]
 
     user = models.ForeignKey(
-        User,
+        'users.User',  # ← строковая ссылка
         on_delete=models.CASCADE,
         verbose_name="Пользователь"
     )
     payment_date = models.DateTimeField(auto_now_add=True, verbose_name="Дата оплаты")
 
     course = models.ForeignKey(
-        Course,
+        'materials.Course',  # ← строковая ссылка
         on_delete=models.CASCADE,
         null=True,
         blank=True,
         verbose_name="Оплаченный курс"
     )
     lesson = models.ForeignKey(
-        Lesson,
+        'materials.Lesson',  # ← строковая ссылка
         on_delete=models.CASCADE,
         null=True,
         blank=True,

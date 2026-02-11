@@ -8,5 +8,6 @@ router.register(r'courses', views.CourseViewSet)
 urlpatterns = [
     path('lessons/', views.LessonListView.as_view()),
     path('lessons/<int:pk>/', views.LessonDetailView.as_view()),
+    path('subscribe/', views.SubscriptionView.as_view(), name='subscription'),
 ]
 urlpatterns += router.urls

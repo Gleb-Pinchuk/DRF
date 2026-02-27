@@ -6,7 +6,7 @@ API для платформы онлайн-курсов с интеграцие�
 
 1. Клонируй репозиторий:
 ```bash
-git clone <repo-url>
+[git clone <repo-url>](https://github.com/Gleb-Pinchuk/DRF/compare/feature/hw4?expand=1)
 cd DRF_project
 
 2. Создай виртуальное окружение:
